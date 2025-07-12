@@ -124,7 +124,7 @@ _(More results in `/photos`)_
 
 ## 🎥 Demo Video
 
-[![Watch Demo](https://img.youtube.com/vi/F_p1eyBO_bM/0.jpg)](https://youtu.be/F_p1eyBO_bM?si=NtgiyMTq59KdWVSd)
+[![Watch Demo](https://img.youtube.com/vi/F_p1eyBO_bM/0.jpg)]([https://youtu.be/F_p1eyBO_bM?si=NtgiyMTq59KdWVSd](https://youtu.be/N1Fw4VjryK0))
 
 Covers:
 - User flow for generation and detection
@@ -145,15 +145,15 @@ Covers:
 
 | Name                     | Role                         |
 |--------------------------|------------------------------|
-| **Abdelrhman Khaled Hassan** | Face Generation & Research Lead |
-| **Omar Mohamed**             | Detection Model Developer      |
+| **Omar Mohamed Omar**        | Detection Model Developer      |
+| **Abdelrhman Khaled Hassan** | Face Generation & Research Lead|
 | **Thanaa Khairy Sayed**      | System Design & Backend        |
 | **Jawaher Ibrahim Ali**      | Frontend Developer             |
 | **Rodina Yahia Mohamed**     | UX/UI Designer                 |
 | **Mona Mohamed Abdel Aziz**  | Documentation & Testing        |
 
 **Supervisor**: Dr. Mohammed El-Said  
-📬 **Contact**: Abdelrhmannkhaledd00@gmail.com
+📬 **Contact**: Omartorkyofficial@gmail.com
 
 ---
 
