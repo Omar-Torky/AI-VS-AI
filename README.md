@@ -125,10 +125,7 @@ _(More results in `/photos`)_
 ## 🎥 Demo Video
 
 [![Watch Demo]
-<a href="https://www.youtube.com/watch?v=N1Fw4VjryK0" target="_blank">
-  <img src="https://img.youtube.com/vi/F_p1eyBO_bM/0.jpg" alt="Watch Demo" width="800"/>
-</a>
-
+<iframe width="853" height="480" src="https://www.youtube.com/embed/N1Fw4VjryK0" title="AI VS AI - Human Face Image Generation and Detection" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Covers:
 - User flow for generation and detection
