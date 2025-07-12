@@ -1,0 +1,77 @@
+<!-- <div style="display: flex; justify-content: center; margin-top: 100px;">
+    <div class="verify-container">
+        <h2>Email Verification</h2>
+
+        <form (ngSubmit)="verifyCode()">
+            <label for="email">Email</label>
+            <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Enter your email" required />
+
+            <label for="code">Verification Code</label>
+            <input type="text" id="code" [(ngModel)]="code" name="code" placeholder="Enter verification code" required />
+
+            <button type="submit" [disabled]="!isDisabled">Verify</button>
+        </form>
+        <button type="button" (click)="resend()" [disabled]="isDisabled">
+          Resend verification code
+        </button> @if (isDisabled) {
+        <p>{{ countdown }} seconds...</p>
+        }
+    </div>
+</div>
+ظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظظ -->
+
+<div class="verify-page">
+    <div class="verify-container">
+        <!-- Verification Icon -->
+        <span class="verification-icon">📧</span>
+
+        <h2>Email Verification</h2>
+        <p class="verify-subtitle">
+            We've sent a verification code to your email address. Please enter the code below to verify your account.
+        </p>
+
+        <form class="verify-form" (ngSubmit)="verifyCode()">
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Enter your email" required class="form-input" />
+            </div>
+
+            <div class="form-group">
+                <label for="code" class="form-label">Verification Code</label>
+                <div class="code-input-container">
+                    <input type="text" id="code" [(ngModel)]="code" name="code" placeholder="Enter 6-digit code" required class="form-input code-input" maxlength="6" autocomplete="one-time-code" />
+                </div>
+            </div>
+
+            <button type="submit" class="verify-btn" [disabled]="!code || code.length < 6">
+                Verify Email
+            </button>
+        </form>
+
+        <button type="button" class="resend-btn" (click)="resend()" [disabled]="isDisabled">
+            {{ isDisabled ? 'Code Sent' : 'Resend Verification Code' }}
+        </button>
+
+        <!-- Countdown Timer -->
+        @if (isDisabled) {
+        <div class="countdown-text">
+            Resend available in {{ countdown }} seconds
+        </div>}
+
+
+        <!-- Success/Error Messages -->
+        @if (successMessage) {
+        <div class="success-message">
+            {{ successMessage }}
+        </div>} @if (errorMessage) {
+        <div class="error-message">
+            {{ errorMessage }}
+        </div>}
+
+
+        <!-- Back to Login Link -->
+        <a class="back-link" routerLink="/signup">
+            ← Back to Register
+        </a>
+    </div>
+</div>

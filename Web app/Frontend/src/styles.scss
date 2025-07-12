@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+/* Transition بين الصفحات */
+
+router-outlet~* {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: fadeIn 0.5s;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2c3e50 100%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,41 @@
+<div class="container-fluid p-0">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 15px;">
+        <div class="container-fluid px-0">
+            <a class="navbar-brand" routerLink="dashboard">Admin Panel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="adminNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="users">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/generate">generate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/detect">detect</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" routerLink="admin">Admin</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <button class="btn btn-danger ms-3" (click)="logout()">Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <!-- <div class="w-100" style="height: calc(100vh - 86px); overflow-y: auto;"> -->
+    <!-- <div class="p-4">
+    </div> -->
+    <!-- </div> -->
+</div>
+<router-outlet></router-outlet>

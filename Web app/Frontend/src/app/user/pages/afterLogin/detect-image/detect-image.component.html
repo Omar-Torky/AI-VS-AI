@@ -1,0 +1,99 @@
+<div style="background: linear-gradient(135deg, #1a1a2e 0%, #2c3e50 100%);">
+    <div class="ai-detector-container" style="height: 100%;">
+        <header class="detector-header">
+            <h1>AI Image Detector</h1>
+            <p class="subtitle">Verify if your images are AI-generated or actually</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="drop-zone" (click)="fileInput.click()" (drop)="onDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" [class.active]="isDragging">
+                <input #fileInput type="file" (change)="onFileSelected($event)" accept="image/*" hidden>
+                <i class="fas fa-upload" style="font-size: 40px; color: #6d6f72;"></i>
+                <h3>Drag & Drop Image Here</h3>
+                <p class="file-type">Supports: JPG, PNG, WEBP</p>
+                <button class="browse-btn">Or Browse Files</button>
+            </div>
+        </div>
+
+        @if (selectedImage) {
+        <div class="result-section">
+            <div class="image-preview">
+                <img [src]="imagePreview" alt="Selected Image">
+                <button class="remove-btn" (click)="removeImage()">
+            <i class="fas fa-times"></i>
+        </button>
+            </div>
+
+            <div class="analysis-result">
+                <h3>Analysis Result</h3>
+                <div class="probability-meter">
+                    <div class="meter-track">
+                        <div class="meter-fill" [style.width.%]="aiProbability"></div>
+                    </div>
+                    <div class="probability-value">{{aiProbability }}% AI Probability</div>
+                </div>
+
+                <div class="verdict" [class.ai-generated]="isAIGenerated" [class.real]="!isAIGenerated">
+                    <i class="fas" [class.fa-robot]="isAIGenerated" [class.fa-check-circle]="!isAIGenerated"></i>
+                    <span>{{isAIGenerated ? 'AI Generated Content' : 'Real Image'}}</span>
+                </div>
+
+                <div class="confidence">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Confidence Level: {{confidence}}%</span>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Angular Template -->
+    @if (detectedImages.length > 0) {
+    <div class="detected-images-section">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-icon">🔍</span> Previously Detected Images
+                <span class="images-count">{{ detectedImages.length }}</span>
+            </h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="detected-images-grid">
+            @for(item of detectedImages; track $index) {
+            <div class="detected-image-card" [style.animation-delay]="($index * 0.1) + 's'">
+                <div class="image-container" (click)="download(item, $index)">
+                    <img [src]="item.image" alt="Detected image" class="detected-image">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <span class="view-icon">📥</span>
+                            <span class="view-text">Download</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="detection-badge">
+                        <span class="badge-icon">✓</span>
+                        <span class="badge-text">Detected</span>
+                    </div>
+                    <p class="detection-label">{{ item.detection_result }}</p>
+                    <div class="card-footer">
+                        <span class="detection-time">{{ $index + 1 }} of {{ detectedImages.length }}</span>
+                        <button class="action-btn" (click)="deleteImage(item, $index)" title="Delete Image">
+                        🗑️
+                    </button>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <!-- Add Delete All Button -->
+        <div class="delete-all-container">
+            <button class="delete-all-btn" (click)="deleteAllImages()" title="Delete All Images">
+              🗑️ Delete All
+          </button>
+        </div>
+    </div>
+    }
+
+</div>

@@ -1,0 +1,87 @@
+<!-- <div style="display: flex; justify-content: center; background-color: #121212; min-height: 100vh; align-items: flex-start; padding: 2rem;">
+    <div class="create-account-container" style="">
+        <h1 style="color: #2ecc71; text-align: center; margin-bottom: 2rem;">Create an Account</h1>
+        <form (ngSubmit)="registerUser()" style="width: 100%;">
+            <div style="margin-bottom: 1.5rem;">
+                <label for="name" style="display: block; color: #e0e0e0; margin-bottom: 0.5rem;">Name</label>
+                <input type="text" id="name" [(ngModel)]="name" name="name" required style="width: 100%; padding: 0.8rem 1rem; background-color: #2d2d2d; border: 1px solid #333; border-radius: 6px; color: #e0e0e0;" />
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label for="email" style="display: block; color: #e0e0e0; margin-bottom: 0.5rem;">Email</label>
+                <input type="email" id="email" [(ngModel)]="email" name="email" required style="width: 100%; padding: 0.8rem 1rem; background-color: #2d2d2d; border: 1px solid #333; border-radius: 6px; color: #e0e0e0;" />
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label for="password" style="display: block; color: #e0e0e0; margin-bottom: 0.5rem;">Password</label>
+                <input type="password" id="password" [(ngModel)]="password" name="password" required style="width: 100%; padding: 0.8rem 1rem; background-color: #2d2d2d; border: 1px solid #333; border-radius: 6px; color: #e0e0e0;" />
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label for="confirm-password" style="display: block; color: #e0e0e0; margin-bottom: 0.5rem;">Confirm Password</label>
+                <input type="password" id="confirm-password" [(ngModel)]="confirmPassword" name="confirmPassword" required style="width: 100%; padding: 0.8rem 1rem; background-color: #2d2d2d; border: 1px solid #333; border-radius: 6px; color: #e0e0e0;" />
+            </div>
+
+            <div class="terms" style="display: flex; align-items: center; margin: 1.5rem 0;">
+                <input type="checkbox" id="terms" [(ngModel)]="termsAccepted" name="termsAccepted" required style="margin-right: 0.8rem; width: 1.1rem; height: 1.1rem; accent-color: #1e5631;" />
+                <label for="terms" style="color: #a0a0a0;">I agree to the Terms of Service and Privacy Policy</label>
+            </div>
+
+            <button type="submit" style="width: 100%; padding: 0.9rem; background-color: #1e5631; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+              Create Account
+          </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 1.5rem; color: #a0a0a0;">
+            already have an account? <a class="signup-link" routerLink="/login" style="color: #2ecc71; text-decoration: none;">Login</a>
+        </div>
+    </div>
+</div> -->
+<div class="signup-page">
+    <div class="create-account-container">
+        <h1>Create an Account</h1>
+        <form class="signup-form" (ngSubmit)="registerUser()">
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" [(ngModel)]="name" name="name" required class="form-input" placeholder="Enter your full name" />
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" [(ngModel)]="email" name="email" required class="form-input" placeholder="Enter your email address" />
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" [(ngModel)]="password" name="password" required class="form-input" placeholder="Create a strong password" />
+                <!-- Optional: Password strength indicator -->
+                <div class="password-strength">
+                    <div class="strength-bar"></div>
+                    <div class="strength-bar"></div>
+                    <div class="strength-bar"></div>
+                    <div class="strength-bar"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password" class="form-label">Confirm Password</label>
+                <input type="password" id="confirm-password" [(ngModel)]="confirmPassword" name="confirmPassword" required class="form-input" placeholder="Confirm your password" />
+            </div>
+
+            <div class="terms-container">
+                <input type="checkbox" id="terms" [(ngModel)]="termsAccepted" name="termsAccepted" required class="terms-checkbox" />
+                <label for="terms" class="terms-label">
+                    I agree to the <a href="#" routerLink="/terms">Terms of Service</a> and <a href="#" routerLink="/privacy">Privacy Policy</a>
+                </label>
+            </div>
+
+            <button type="submit" class="signup-btn" [disabled]="!termsAccepted">
+                Create Account
+            </button>
+        </form>
+
+        <div class="login-link-container">
+            Already have an account? <a class="login-link" routerLink="/login">Login</a>
+        </div>
+    </div>
+</div>

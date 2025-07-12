@@ -1,0 +1,28 @@
+<div class="login-page">
+    <div class="login-container">
+        <h1>AI vs AI</h1>
+
+        <form class="login-form" (submit)="login()" [formGroup]="loginForm">
+            <div class="form-group">
+                <input type="email" placeholder="Email" formControlName="email" required class="dark-input">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" formControlName="password" required class="dark-input">
+            </div>
+
+            <button type="submit" class="login-btn">LOGIN</button>
+        </form>
+
+        <div class="social-login">
+            <p class="divider">OR</p>
+            <button class="google-btn" (click)="loginWithGoogle()">
+        Sign in with Google
+      </button>
+        </div>
+
+        <div class="footer-links">
+            <a routerLink="/forget" class="forgot-password">Forgot Password?</a>
+            <a routerLink="/signup" class="signup-link">Don't have an account? Sign Up</a>
+        </div>
+    </div>
+</div>

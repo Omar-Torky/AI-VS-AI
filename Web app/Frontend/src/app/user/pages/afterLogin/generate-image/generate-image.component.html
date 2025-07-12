@@ -1,0 +1,99 @@
+<div class="dark-generator-container">
+    <h1>Free AI Image Generator Online</h1>
+    <p class="subtitle">Unleash your creativity with our free online AI image generator</p>
+
+    <div class="input-section">
+        <textarea [(ngModel)]="promptText" placeholder="Describe the image you want to generate..." class="prompt-input"></textarea>
+        <button class="generate-button" (click)="generateImage()" [disabled]="isLoading">
+          {{ isLoading ? 'Generating...' : 'Generate AI Image' }}
+        </button>
+    </div>
+
+    @if (isLoading) {
+    <div class="loading-spinner">
+        <div class="spinner-circle"></div>
+        <p>Generating your masterpiece...</p>
+    </div>
+    } @if (generatedImage) {
+    <div class="result-section">
+        <div class="image-container">
+            <div class="image-wrapper">
+                <img [src]="generatedImage" alt="Generated AI image">
+            </div>
+            <div class="action-buttons">
+                <button class="download-button" (click)="downloadImage()">
+                    <span class="btn-icon">📥</span>
+                    Download Image
+                </button>
+                <button class="regenerate-button" (click)="generateImage()">
+                    <span class="btn-icon">🔄</span>
+                    Regenerate
+                </button>
+            </div>
+        </div>
+    </div>
+    }
+
+    <!-- Generated Images History Section -->
+    @if (generatedImages.length > 0) {
+    <div class="generated-history-section">
+        <div class="history-header">
+            <h2 class="history-title">
+                <span class="title-icon">🎨</span> Your Generated Masterpieces
+                <span class="images-count">{{ generatedImages.length }}</span>
+            </h2>
+            <div class="history-controls">
+                <button class="clear-all-btn" (click)="clearHistory()" title="Clear All History">
+                    <span class="btn-icon">🗑️</span>
+                    Clear All
+                </button>
+            </div>
+        </div>
+
+        <div class="generated-images-grid">
+            @for(item of generatedImages; track $index) { @if($index
+            <=test){<div class="generated-image-card" [style.animation-delay]="($index * 0.1) + 's'">
+                <div class="image-preview" (click)="viewFullImage(item.image, item.prompt)">
+                    <img [src]="item.image" alt="Generated image" class="generated-img">
+                    <!-- <div class="image-overlay">
+                        <div class="overlay-content">
+                            <span class="view-icon">🔍</span>
+                            <span class="view-text">View Full Size</span>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="card-details">
+                    <div class="prompt-display">
+                        <h4 class="prompt-title">Prompt:
+                        </h4>
+                        <p class="prompt-text">{{ item.description }}</p>
+                    </div>
+
+                    <div class="card-meta">
+                        <span class="generation-date">{{ item.createdAt  }}</span>
+                        <div class="card-actions">
+                            <button class="action-btn download-btn" title="Download" (click)="downloadSpecificImage(item)">
+                                📥
+                            </button>
+                            <button class="action-btn delete-btn" title="Delete" (click)="deleteFromHistory($index)">
+                                🗑️
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        } }
+    </div>
+
+    @if (generatedImages.length > 4) {
+    <div class="load-more-section">
+        <button class="load-more-btn" (click)="toggleShowAll()">
+                {{ showAllImages ? 'Show Less' : 'Show All (' + generatedImages.length + ')' }}
+                <span class="btn-arrow">{{ showAllImages ? '↑' : '↓' }}</span>
+            </button>
+    </div>
+    }
+</div>
+}
+</div>

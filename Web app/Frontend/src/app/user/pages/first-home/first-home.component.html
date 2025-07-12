@@ -1,0 +1,80 @@
+<div class="home-container">
+    <nav class="navbar">
+        <!-- <div class="logo">🌴 AI vs AI</div>
+          -->
+
+        <div class="logo">
+            <img src="../../../../assets/ChatGPT Image Jun 10, 2025, 11_39_29 AM.png" alt="Logo" class="logo-img" /> AI vs AI
+        </div>
+
+        <ul class="nav-links" style="align-items: anchor-center;">
+
+            <!-- <li> <button class="mode-toggle" (click)="toggleMode()" style="    background: none;
+    /* border: none; */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;">
+                <span class="mode-icon">{{ isDarkMode ? '☀️' : '🌙' }}</span>
+                </button>
+            </li> -->
+
+
+            @if (value) {
+            <li><button class="login-button" (click)="logout()">Logout</button></li>
+            } @else {
+            <li><button class="login-button" routerLink="/login">Login</button></li>
+            }
+        </ul>
+    </nav>
+
+    <div class="container-fluid hero-section">
+        <div class="container d-flex align-items-center justify-content-center min-vh-100">
+            <div class="text-center d-flex">
+                <div class="image-section mb-4">
+                    <div class="image-wrapper">
+                        <img src="../../../../assets/1.png" alt="AI Detection" class="img-fluid rounded shadow" />
+                    </div>
+                </div>
+                <div style="    text-align: left;
+    padding: 40px 0px 0px 40px;">
+                    <h1 class="display-5 fw-bold text-white mb-3">AI Image Detection</h1>
+                    <p class="lead text-light mb-4">Welcome to our website! Explore the wonders of AI-generated content with us.</p>
+                    <p class="text-muted mb-4" style="color: white ! IMPORTANT;">Curious about what?</p>
+                    <button class="btn btn-primary btn-lg px-4 py-2" (click)="detect()">Get Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid hero-section">
+        <div class="container d-flex align-items-center justify-content-center min-vh-100">
+            <div class="text-center">
+                <header class="header mb-4">
+                    <h1 class="display-5 fw-bold text-white mb-3">Free AI Image Generator Online</h1>
+                    <p class="lead text-light mb-4">Unleash your creativity with our free online AI image generator and detect</p>
+                </header>
+
+                <section class="image-section mb-4">
+                    <div class="image-wrapper">
+                        <img src="../../../../assets/gene2.jpeg" alt="AI Generated Image" class="img-fluid rounded shadow" />
+                    </div>
+                    <p class="caption text-light mt-3">A beautiful cat, with white and red hair.</p>
+                </section>
+
+                <button class="btn btn-primary btn-lg px-4 py-2" (click)="generate()">Generate AI Images Now</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        <div class="footer-content">
+            <p>© 2025 AiVsAi. All rights reserved.</p>
+            <!-- <div class="links">
+                <a href="#">Privacy</a>
+                <a routerLink="/about">About</a>
+                <a href="#">Contact</a>
+            </div> -->
+        </div>
+    </footer>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+<header>
+    <div class="logo">
+        <img src="assets/logo.webp" alt="AiVsAi Logo" style="width:20px" /> Ai Vs Ai
+    </div>
+    <button class="hamburger" aria-label="Toggle Navigation" (click)="toggleNav()">
+    ☰
+  </button>
+    <nav [class.open]="isNavOpen">
+        <a routerLink="/" routerLinkActive="active" (click)="closeNav()">Home</a>
+        <a routerLink="/login" routerLinkActive="active" (click)="closeNav()">Login</a>
+        <a routerLink="/signup" routerLinkActive="active" (click)="closeNav()">Signup</a>
+    </nav>
+</header>
