@@ -124,7 +124,7 @@ _(More results in `/photos`)_
 
 ## 🎥 Demo Video
 
-[![Watch Demo](https://img.youtube.com/vi/F_p1eyBO_bM/0.jpg)]([https://youtu.be/F_p1eyBO_bM?si=NtgiyMTq59KdWVSd](https://youtu.be/N1Fw4VjryK0))
+[![Watch Demo](https://img.youtube.com/vi/F_p1eyBO_bM/0.jpg)](https://www.youtube.com/watch?v=N1Fw4VjryK0)
 
 Covers:
 - User flow for generation and detection
